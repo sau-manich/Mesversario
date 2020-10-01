@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesversario</title>
+    <link rel="stylesheet" href="carta.css">
+    <!-- <script src="main.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <link rel="icon" href="https://cartasdeamor.top/wp-content/uploads/2020/04/cropped-heart-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="https://cartasdeamor.top/wp-content/uploads/2020/04/cropped-heart-180x180.png">
+</head>
+<body>
+    <!-- basado backface-visibility https://css-tricks.com/almanac/properties/b/backface-visibility/ -->
+
+<div id="perspectiva">
+    <div id="contenedor">
+        <div class="cara frontal">
+            <h1>Para: Virginia<br><span>30 Septiembre 2020</span></h1>
+        </div>
+        <div class="cara trasera">
+            <div id="abrir"></div>
+            <div id="partes"></div>
+            <div id="carta">
+                <hgroup>
+                    <h1>Mesversario</h1>
+                </hgroup>
+                <p>Hola amor,
+                    espero que al leer esta carta entre lineas entiendas lo importante 
+                    que eres en mi vida y lo mucho que quiero estar a tu lado. <br>
+
+                    Una vez lei que el amor es una distorción de la realidad, que nos hace
+                    más apacionados y eso nos puede llebar a cometer locuras muy grandes pero
+                    lo bonito es que esas locuras son de verdad. <br>
+
+                    Puede que esto sea lo más loco que haga en mi vida, porque en mis planes
+                    no esta soltar tu mano, más al contrario, es caminar tomado de el para siempre.
+
+                    No sabes lo agradecido que estoy con Dios por haberme permitido
+                    encontrarte en el camino y haberte conocido ha sido, es y será lo mejor que me ha pasado. <br>
+                    
+                    Hoy, tengo la suerte de decir que estoy enamorado y que me siento muy 
+                    afortunado por tenerte a mi lado, hoy cumplimos 1 mes juntos y no sabes lo feliz que estoy
+                    al saber que eh pasado 30 días con la mujer más increible del mundo. Te quiero mucho<br><br>
+
+                    Feliz Mesversario Amor..
+                    
+                    
+                </p>
+            </div>
+        </div>
+    </div><!-- fin contenedor -->
+</div>
+<div id="wrapper"></div>
+
+</body>
+<script>
+    // autor: Marco Barría
+
+$(window).scroll(function () {   
+    var scr = $(window).scrollTop(),
+            C = $('#contenedor'),
+             A = $('#abrir'),
+             E = $('#carta'),
+                 F = $('#carta hgroup h2'),
+             P = $('#perspectiva');
+ 
+     // giro y abertura
+      if (scr >= 100) {
+             C.css({
+                 'transition':'all 1s',
+                 'transform':'rotateY(180deg)'
+             });
+             A.css({
+                 'transition':'all 1s .5s',
+                 'transform':'rotateX(180deg)',
+                 'z-index': '0'
+             });
+      }
+      // cerrado y giro
+      else if (scr <= 100) {
+             C.css({
+                 'transition':'all 1s .5s',
+                 'transform':'rotateY(0deg)'
+             });
+             A.css({
+                 'transition':'all 1s',
+                 'transform':'rotateX(0deg)',
+                 'z-index': '10'
+             });  
+      }
+      // Sobre trasladoY / carta
+      if (scr >= 500) {
+             E.css({
+                 'transition':'all .5s 1s',
+                 'top':'-550px',
+                 'height':'500px'
+             });
+          P.css({
+              'transition':'all 1s',
+              'transform':'translateY(450px)'
+          });
+             F.css({
+              'transition':'all 1s',
+              'transform':'rotateZ(180deg)'
+             });
+      }
+      // Sobre position original / guardado carta
+      else if (scr <= 500) {
+             E.css({
+                 'transition':'all .5s',
+                 'top':'3px',
+                 'height':'200px'
+             });
+          P.css({
+              'transform':'translateY(0px)'
+          });
+             F.css({
+              'transform':'rotateZ(0deg)'
+             });
+      }
+ });
+</script>
+</html>

@@ -1,0 +1,19 @@
+{
+    "name": "#Mesversario",
+    "short_name": "#Mesversario",
+    "description": "Carta para la novia más linda del mundo  :)",
+    "background_color": "#161a1b",
+    "theme_color": "#161a1b",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest",
+    "scope": "./",
+    "lang": "es-MX",
+    "icons": [
+      {
+        "src": "ico.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      }
+    ]
+  }
